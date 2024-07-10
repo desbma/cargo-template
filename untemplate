@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for f in Cargo.toml src/main.rs
+do
+	sed -i 's@{{.*}}@placeholder@' "${f}"
+done

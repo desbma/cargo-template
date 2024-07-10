@@ -1,0 +1,7 @@
+[placeholders]
+project_description = { prompt = "Project description", type = "string" }
+
+[template]
+ignore = [
+  "untemplate"
+]
