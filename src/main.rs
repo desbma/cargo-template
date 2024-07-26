@@ -26,3 +26,13 @@ fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+
+    #[test]
+    fn a_test() {
+        let v = true;
+        assert!(v);
+    }
+}
