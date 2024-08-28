@@ -13,6 +13,6 @@ pub(crate) fn parse() -> anyhow::Result<Config> {
         .ok_or_else(|| anyhow::anyhow!("Missing config file"))?;
     let toml_data = std::fs::read_to_string(config_filepath)?;
     let config = toml::from_str(&toml_data)?;
-    log::debug!("{config:#?}");
+    log::trace!("{config:#?}");
     Ok(config)
 }
