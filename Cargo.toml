@@ -33,12 +33,14 @@ unused-qualifications = "warn"
 
 [lints.clippy]
 pedantic = { level = "warn", priority = -1 }
-# below lints are from clippy::restriction, and assume clippy >= 1.80
+# below lints are from clippy::restriction, and assume clippy >= 1.81
 # https://rust-lang.github.io/rust-clippy/master/index.html#/?levels=allow&groups=restriction
+allow_attributes = "warn"
 clone_on_ref_ptr = "warn"
 dbg_macro = "warn"
 empty_enum_variants_with_brackets = "warn"
 expect_used = "warn"
+field_scoped_visibility_modifiers = "warn"
 fn_to_numeric_cast_any = "warn"
 format_push_string = "warn"
 if_then_some_else_none = "warn"
