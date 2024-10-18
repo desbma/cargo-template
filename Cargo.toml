@@ -33,7 +33,7 @@ unused-qualifications = "warn"
 
 [lints.clippy]
 pedantic = { level = "warn", priority = -1 }
-# below lints are from clippy::restriction, and assume clippy >= 1.81
+# below lints are from clippy::restriction, and assume clippy >= 1.82
 # https://rust-lang.github.io/rust-clippy/master/index.html#/?levels=allow&groups=restriction
 allow_attributes = "warn"
 clone_on_ref_ptr = "warn"
@@ -52,6 +52,7 @@ mixed_read_write_in_expression = "warn"
 multiple_inherent_impl = "warn"
 needless_raw_strings = "warn"
 panic = "warn"
+pathbuf_init_then_push = "warn"
 pub_without_shorthand = "warn"
 redundant_type_annotations = "warn"
 ref_patterns = "warn"
@@ -71,5 +72,6 @@ unnecessary_safety_comment = "warn"
 unnecessary_safety_doc = "warn"
 unneeded_field_pattern = "warn"
 unseparated_literal_suffix = "warn"
+unused_result_ok = "warn"
 unwrap_used = "warn"
 verbose_file_reads = "warn"
