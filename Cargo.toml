@@ -1,6 +1,8 @@
 [package]
 name = "{{project-name}}"
+authors = ["desbma"]
 description = "{{project_description}}"
+readme = "README.md"
 version = "0.1.0"
 edition = "2021"
 
@@ -10,13 +12,18 @@ codegen-units = 1
 strip = true
 
 [dependencies]
-anyhow = { version = "1.0.86", default-features = false, features = ["std", "backtrace"] }
-clap = { version = "4.5.9", default-features = false, features = ["std", "color", "help", "usage", "error-context", "suggestions", "derive"] }
+anyhow = { version = "1.0.95", default-features = false, features = ["std", "backtrace"] }
+clap = { version = "4.5.23", default-features = false, features = ["std", "color", "help", "usage", "error-context", "suggestions", "derive"] }
+clap_mangen = { version = "0.2.24", default-features = false, optional = true }
 log = { version = "0.4.22", default-features = false, features = ["max_level_trace", "release_max_level_debug", "std"] }
-serde = { version = "1.0.204", default-features = false, features = ["std", "derive"] }
+serde = { version = "1.0.217", default-features = false, features = ["std", "derive"] }
 simple_logger = { version = "5.0.0", default-features = false, features = ["colors", "stderr"] }
-toml = { version = "0.8.14", default-features = false, features = ["parse"] }
+toml = { version = "0.8.19", default-features = false, features = ["parse"] }
 xdg = { version = "2.5.2", default-features = false }
+
+[features]
+default = []
+gen-man-pages = ["dep:clap_mangen"]
 
 [lints.rust]
 # https://doc.rust-lang.org/rustc/lints/listing/allowed-by-default.html
@@ -77,3 +84,10 @@ unused_result_ok = "warn"
 unused_trait_names = "warn"
 unwrap_used = "warn"
 verbose_file_reads = "warn"
+
+[package.metadata.deb]
+depends = "$auto"
+assets = [
+  ["target/release/{{project-name}}", "usr/bin/", "755"],
+  ["target/man/*.1.gz", "usr/share/man/man1/", "644"]
+]
