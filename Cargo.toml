@@ -4,6 +4,7 @@ authors = ["desbma"]
 description = "{{project_description}}"
 readme = "README.md"
 version = "0.1.0"
+rust-version = "1.81"
 edition = "2021"
 
 [profile.release]
