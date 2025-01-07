@@ -35,16 +35,18 @@ conventional_commits = true
 filter_unconventional = false
 # regex for parsing and grouping commits
 commit_parsers = [
-    { message = "^feat", group = "<!-- 1 -->🚀 Features" },
+    { message = "^feat", group = "<!-- 1 -->💡 Features" },
     { message = "^fix", group = "<!-- 2 -->🐛 Bug fixes" },
-    { message = "^perf", group = "<!-- 3 -->⚡ Performance" },
-    { message = "^doc", group = "<!-- 4 -->📚 Documentation" },
+    { message = "^perf", group = "<!-- 3 -->🏃 Performance" },
+    { message = "^doc", group = "<!-- 4 -->📗 Documentation" },
     { message = "^test", group = "<!-- 5 -->🧪 Testing" },
     { message = "^refactor", group = "<!-- 6 -->🚜 Refactor" },
     { message = "^style", group = "<!-- 7 -->🎨 Styling" },
-    { message = "^ci", group = "<!-- 8 -->⚙️ Continuous integration" },
+    { message = "^build", group = "<!-- 8 -->🏗  Build" },
+    { message = "^ci", group = "<!-- 9 -->🤖 Continuous integration" },
     { message = "^chore: version ", skip = true },
-    { message = "^chore", group = "<!-- 9 -->💼 Miscellaneous tasks" },
+    { message = "^chore", group = "<!-- 10 -->🧰 Miscellaneous tasks" },
+    { message = "^revert", group = "<!-- 10 -->🧰 Miscellaneous tasks", default_scope = "revert" },
     { body = ".*security", group = "<!-- 0 -->🛡️ Security" },
 ]
 # filter out the commits that are not matched by commit parsers
