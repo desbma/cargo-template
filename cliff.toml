@@ -20,7 +20,7 @@ body = """
           ([{{ commit.id | truncate(length=7, end="") }}](https://github.com/desbma/{{project-name}}/commit/{{ commit.id }}) by {{ commit.author.name }})\
     {% endfor %}
 {% endfor %}
----
+______________________________________________________________________
 
 """
 # template for the changelog footer
