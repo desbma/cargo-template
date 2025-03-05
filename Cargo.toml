@@ -4,8 +4,8 @@ authors = ["desbma"]
 description = "{{project_description}}"
 readme = "README.md"
 version = "0.1.0"
-rust-version = "1.81"
-edition = "2021"
+rust-version = "1.85"
+edition = "2024"
 
 [profile.release]
 lto = true
@@ -41,9 +41,10 @@ unused-qualifications = "warn"
 
 [lints.clippy]
 pedantic = { level = "warn", priority = -1 }
-# below lints are from clippy::restriction, and assume clippy >= 1.84
+# below lints are from clippy::restriction, and assume clippy >= 1.85
 # https://rust-lang.github.io/rust-clippy/master/index.html#/?levels=allow&groups=restriction
 allow_attributes = "warn"
+as_pointer_underscore = "warn"
 clone_on_ref_ptr = "warn"
 dbg_macro = "warn"
 empty_enum_variants_with_brackets = "warn"
@@ -53,6 +54,7 @@ fn_to_numeric_cast_any = "warn"
 format_push_string = "warn"
 if_then_some_else_none = "warn"
 impl_trait_in_params = "warn"
+indexing_slicing = "warn"
 infinite_loop = "warn"
 lossy_float_literal = "warn"
 map_with_unused_argument_over_ranges = "warn"
