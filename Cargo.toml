@@ -15,7 +15,8 @@ strip = true
 [dependencies]
 anyhow = { version = "1.0.95", default-features = false, features = ["std", "backtrace"] }
 clap = { version = "4.5.23", default-features = false, features = ["std", "color", "help", "usage", "error-context", "suggestions", "derive"] }
-clap_mangen = { version = "0.2.24", default-features = false, optional = true }
+clap_complete = { version = "4.5.48", default-features = false, optional = true }
+clap_mangen = { version = "0.2.26", default-features = false, optional = true }
 log = { version = "0.4.22", default-features = false, features = ["max_level_trace", "release_max_level_debug", "std"] }
 serde = { version = "1.0.217", default-features = false, features = ["std", "derive"] }
 simple_logger = { version = "5.0.0", default-features = false, features = ["colors", "stderr"] }
@@ -24,7 +25,7 @@ xdg = { version = "2.5.2", default-features = false }
 
 [features]
 default = []
-gen-man-pages = ["dep:clap_mangen"]
+generate-extra = ["dep:clap_mangen", "dep:clap_complete"]
 
 [lints.rust]
 # https://doc.rust-lang.org/rustc/lints/listing/allowed-by-default.html
