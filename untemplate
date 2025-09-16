@@ -4,3 +4,4 @@ for f in Cargo.toml src/main.rs
 do
 	sed -i 's@{{.*}}@placeholder@' "${f}"
 done
+mv .github/workflows/security-audit.yml{_,}
