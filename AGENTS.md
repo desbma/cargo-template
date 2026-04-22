@@ -28,8 +28,3 @@
   - Prefer full type comparisons with `assert_eq!` over selectively checking nested attributes or unpacking; tag types with `#[cfg_attr(test, derive(Eq, PartialEq))]` if needed
   - Do not add section-separator comments (e.g., `// --- Some Section ---`) in test modules — test names are descriptive enough
 - When moving or refactoring code, never remove comment lines — preserve all comments and move them along with the code they document
-
-## Version control
-
-- This repository uses the jujutsu VCS. **Never use any `jj` command that modifies the repository**.
-- You can also use read-only git commands for inspecting repository state. **Never use any git command that modifies the repository**.
