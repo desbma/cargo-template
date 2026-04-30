@@ -14,6 +14,7 @@
 - Strict Clippy: pedantic + many restriction lints (see `[lints.clippy]` in Cargo.toml)
 - No `unwrap`/`expect`/`panic` in non-test code; use `anyhow` for errors
 - Imports:
+  - Place all `use` statements at the top of the file; do not put them inside functions, `impl` blocks, or other inner scopes (the only exception is inside `#[cfg(...)]` modules such as `mod tests`, where the imports go at the top of that module)
   - Group std imports first, then external crates, then local modules
   - Never use fully-qualified paths (e.g., `std::path::Path` or `crate::ui::foo()`) in code; always import namespaces via `use` statements and refer to symbols by their short name
   - Import deep `std` namespaces aggressively (e.g., `use std::path::PathBuf;`, `use std::collections::HashMap;`), except for namespaces like `io` or `fs` whose symbols have very common names that may collide — import those at the module level instead (e.g., `use std::fs;`)
@@ -21,6 +22,9 @@
 - When formatting paths in error messages or logs, always use debug formatting (`{:?}`) rather than `.display()` to preserve non-UTF-8 safety and show quoting
 - Prefer `log` macros for logging; no `dbg!` or `todo!`
 - Prefer `default-features = false` for dependencies
+- Comments (including doc comments):
+  - Keep comments concise: prefer a short summary over restating implementation details, only mention exceptional cases when they affect behavior, and are not already conveyed by the types used, function signature, or code just below
+  - Omit trailing periods in single-sentence comments
 - In tests:
   - Use `use super::*;` to import from the parent module
   - Prefer `unwrap()` over `expect()` for conciseness
