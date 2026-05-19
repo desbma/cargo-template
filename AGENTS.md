@@ -10,7 +10,6 @@
 
 ## Code Style
 
-- Rust 2024 edition, MSRV 1.85 (can be increased as needed)
 - Strict Clippy: pedantic + many restriction lints (see `[lints.clippy]` in Cargo.toml)
 - No `unwrap`/`expect`/`panic` in non-test code; use `anyhow` for errors
 - Imports:
