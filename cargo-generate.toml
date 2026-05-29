@@ -3,5 +3,6 @@ project_description = { prompt = "Project description", type = "string" }
 
 [template]
 ignore = [
+  ".agents",
   "untemplate"
 ]
