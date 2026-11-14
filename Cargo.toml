@@ -3,7 +3,7 @@ name = "{{project-name}}"
 authors = ["desbma"]
 description = "{{project_description}}"
 version = "0.1.0"
-rust-version = "1.85"
+rust-version = "1.100"
 edition = "2024"
 
 [profile.release]
@@ -27,19 +27,26 @@ default = []
 generate-extra = ["dep:clap_mangen", "dep:clap_complete"]
 
 [lints.cargo]
+# https://doc.rust-lang.org/cargo/reference/lints.html
 pedantic = { level = "warn", priority = -1 }
 
 [lints.rust]
 # https://doc.rust-lang.org/rustc/lints/listing/allowed-by-default.html
+ambiguous_negative_literals = "warn"
+closure_returning_async_block = "warn"
+dead_code_pub_in_binary = "warn"
 explicit_outlives_requirements = "warn"
+impl_trait_redundant_captures = "warn"
 missing_docs = "warn"
 non_ascii_idents = "deny"
+raw_borrows_via_references = "warn"
+redundant_imports = "warn"
 redundant_lifetimes = "warn"
 single_use_lifetimes = "warn"
 unit_bindings = "warn"
 unreachable_pub = "warn"
-unused_crate_dependencies = "warn"
 unused_lifetimes = "warn"
+unused_macro_rules = "warn"
 unused_qualifications = "warn"
 
 [lints.clippy]
