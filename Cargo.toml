@@ -2,7 +2,6 @@
 name = "{{project-name}}"
 authors = ["desbma"]
 description = "{{project_description}}"
-readme = "README.md"
 version = "0.1.0"
 rust-version = "1.85"
 edition = "2024"
@@ -26,6 +25,9 @@ xdg = { version = "2.5.2", default-features = false }
 [features]
 default = []
 generate-extra = ["dep:clap_mangen", "dep:clap_complete"]
+
+[lints.cargo]
+pedantic = { level = "warn", priority = -1 }
 
 [lints.rust]
 # https://doc.rust-lang.org/rustc/lints/listing/allowed-by-default.html
